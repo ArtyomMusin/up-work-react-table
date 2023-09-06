@@ -12,8 +12,8 @@ const UsersTable: FC<IProps> = ({ data }): ReactElement => {
     const [openedString, setOpenedString] = useState<string | null>(null)
 
     const registrationHeader = (header: object): ReactElement => {
-        const ascStyles: string = 'before:absolute before:-right-3 before:top-1 before:border-4 before:border-transparent before:border-b-4 before:border-b-gray-900'
-        const descStyles: string = 'after:absolute after:-right-3 after:top-3.5 after:border-4 after:border-transparent after:border-t-4 after:border-t-gray-900'
+        const ascStyles: string = 'before:absolute before:-right-3 before:top-1 before:border-4 before:border-transparent before:border-b-4 before:border-b-green-900'
+        const descStyles: string = 'after:absolute after:-right-3 after:top-3.5 after:border-4 after:border-transparent after:border-t-4 after:border-t-green-900'
         const sortClasses:TypeSort = {
             asc: ascStyles,
             desc: descStyles
@@ -40,8 +40,8 @@ const UsersTable: FC<IProps> = ({ data }): ReactElement => {
     }
 
     const headerWrapper = (content: string, header: object): ReactElement => {
-        const ascStyles:string = 'before:absolute before:right-2.5 before:top-2.5 before:border-4 before:border-transparent before:border-b-4 before:border-b-gray-900'
-        const descStyles:string = 'after:absolute after:right-2.5 after:top-5 after:border-4 after:border-transparent after:border-t-4 after:border-t-gray-900'
+        const ascStyles:string = 'before:absolute before:right-2.5 before:top-2.5 before:border-4 before:border-transparent before:border-b-4 before:border-b-green-900'
+        const descStyles:string = 'after:absolute after:right-2.5 after:top-5 after:border-4 after:border-transparent after:border-t-4 after:border-t-green-900'
         const sortClasses:TypeSort = {
             asc: ascStyles,
             desc: descStyles
@@ -63,7 +63,7 @@ const UsersTable: FC<IProps> = ({ data }): ReactElement => {
         columnHelper.display({
             id: 'more',
             header: '',
-            cell: info => <span className={`inline-flex justify-center items-center w-3 h-4 ${info.row.original.id === openedString ? '-rotate-90 -translate-y-0.5' : ''} hover:cursor-pointer`} onClick={() => setOpenedString(prevState => prevState === info.row.original.id ? null : info.row.original.id)}><i className="block w-2 h-0.5 bg-gray-300 rotate-45  translate-x-1 -translate-y-1"></i><i  className="block w-2 h-0.5 bg-gray-300 -rotate-45 -translate-x-0.5"></i></span>
+            cell: info => <span className={`inline-flex justify-center items-center w-3 h-4 hover:cursor-pointer transition-all duration-200 ease-linear ${info.row.original.id === openedString ? 'rotate-90 -translate-y-0.5 -translate-x-0.5' : '-translate-y-0.5'}`} onClick={() => setOpenedString(prevState => prevState === info.row.original.id ? null : info.row.original.id)}><i className="block w-2 h-0.5 bg-green-900 rotate-45  translate-x-1 -translate-y-1"></i><i  className="block w-2 h-0.5 bg-green-900 -rotate-45 -translate-x-0.5"></i></span>
         }),
         columnHelper.accessor('registrationNumber', {
             header: props => headerWrapper('Registration #', props.header),

@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.styled-scrollbars::-webkit-scrollbar {
+    width: 10px; /* в основном для вертикальных полос прокрутки */
+    height: 10px; /* в основном для горизонтальных полос прокрутки */
+}
+.styled-scrollbars::-webkit-scrollbar-thumb { /* плашка-бегунок */
+    border-radius: 1rem;
+    background: #14532D;
+    border: 2px solid #DCFCE7;
+}
+.styled-scrollbars::-webkit-scrollbar-track { /* фон */
+    background: #DCFCE7;
+}
