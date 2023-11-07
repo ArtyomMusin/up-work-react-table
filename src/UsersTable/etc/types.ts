@@ -26,8 +26,8 @@ export type TypeIndividualSecuredParties = {
 }
 
 interface IRowData {
-    areAssetsSubjectToControl: boolean
-    areProceedsClaimed: boolean
+    areAssetsSubjectToControl?: boolean | null
+    areProceedsClaimed?: boolean | null
     changeNumber: number
     collateralClassType: string
     collateralDescription: string
@@ -37,8 +37,8 @@ interface IRowData {
     grantorSummary: string
     grantors: Array<TypeOrganisationGrantor & TypeIndividualGrantor>
     hasAttachment: boolean
-    isInventory: boolean
-    isPmsi: boolean
+    isInventory?: boolean | null
+    isPmsi?: boolean | null
     isSerialised: boolean
     isSubordinate: boolean
     isTransitional: boolean
@@ -61,11 +61,24 @@ export interface IUser extends IRowData {
     description: string
     fileId: null
     id: string
-    isInventory: boolean
+    updatedAt: string
+    searchRequestId: string
+    isInventory: boolean | null
     linkedPpsrRegistrationNumber: null
     manufacturersModel: null
     manufacturersName: null
     rawData: IRowData
+    registrationEndTimeString: string
+    type: string
+    serialNumber: string | number | null
+    serialNumberType: string | number | null
+    vehicleDescriptiveText: string | null
+    vehicleRegistrationNumber: string | number | null
+    "udf1": string | number | null
+    "udf2": string | number | null
+    "udf3": string | number | null
+    "udf4": string | number | null
+    "udf5": string | number | null
 }
 
 // UserTable.tsx
