@@ -1,6 +1,7 @@
 {
   "name": "table-nico",
   "version": "0.1.0",
+  "homepage": "https://artyommusin.github.io/up-work-react-table-deploy/",
   "private": true,
   "dependencies": {
     "@tanstack/react-table": "^8.9.3",
